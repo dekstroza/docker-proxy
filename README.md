@@ -18,3 +18,12 @@ Based on hpess/dockerproxy, so all kudos go there. Extended to cache traffic to 
 Squid inside container will transparently redirect all docker containers through it, so all traffic destined to ports 80, 443 and 8443 will go through it. Since squid will be using ssl-bump for https (443 and 8443) usual notes apply on it, for more details see: http://wiki.squid-cache.org/Features/SslBump
 
 To stop container, run stop-proxy.sh and hit CTRL+C, it will clean up iptables rules it has set up for transparent proxying.
+
+## Problems
+
+You can always start shell inside the container and see what happens with:
+      docker exec -it CONTAINER_ID bash
+      tail -f /var/log/squid/access
+for example.
+
+Happy hacking.
