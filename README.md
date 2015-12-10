@@ -22,8 +22,10 @@ To stop container, run stop-proxy.sh and hit CTRL+C, it will clean up iptables r
 ## Problems
 
 You can always start shell inside the container and see what happens with:
-      docker exec -it CONTAINER_ID bash
-      tail -f /var/log/squid/access
+```bash
+docker exec -it CONTAINER_ID bash
+tail -f /var/log/squid/access
 for example.
+```
 
 Happy hacking.
