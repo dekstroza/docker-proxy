@@ -7,7 +7,7 @@ Docker container running squid caching http/https traffic on ports 80,443 and 84
 Once you start building enough containers you will get tired of waiting for rpm's or tgz to download from Internet, and you will wish for some caching to speed things up - even more so if you are on slow internet, or wish to work offline. There are more then few of these squid in containers, this one works for me, has support for http/https and https works both on 443 and 8443, plus it uses mounted volume on the host to keep cache files between runs.
 
 
-Based on hpess/dockerproxy, so all kudos go there. Extended to cache traffic to 8443 as well, since some sites don't use 443 and use 8443 instead.
+Based on hpess/dockerproxy (https://github.com/Hewlett-Packard-ESS/docker-proxy), so all kudos go there. Extended to cache traffic to 8443 as well, since some sites don't use 443 and use 8443 instead.
 
 ## Getting started
 
@@ -25,7 +25,6 @@ You can always start shell inside the container and see what happens with:
 ```bash
 docker exec -it CONTAINER_ID bash
 tail -f /var/log/squid/access
-for example.
 ```
 
 Happy hacking.
